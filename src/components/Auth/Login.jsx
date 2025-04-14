@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const Login = () => {
+const Login = ({handleLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
+    handleLogin(email,password);
+    setEmail("");
+    setPassword("");
   };
 
   return (
