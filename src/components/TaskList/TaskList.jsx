@@ -1,30 +1,30 @@
-import React from "react";
+import AcceptTask from "./AcceptTask";
+import CompleteTask from "./CompleteTask";
+import FailedTask from "./FailedTask";
+import NewTask from "./NewTask";
 
-const TaskList = () => {
+const TaskList = ({ data }) => {
   return (
-    <div className="bg-amber-300 rounded-xl px-5 py-6 h-40 w-64 overflow-hidden flex-shrink-0">
-        <div className="flex justify-between">
-            <p>HIGH</p>
-            <p>2024-12-12</p>
-        </div>
-      <p className="break-words text-sm line-clamp-5 py-2 max-h-20 overflow-y-auto">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate
-        nulla ut ligula congue, a malesuada justo posuere. Nulla facilisi. Donec
-        rutrum felis vitae dolor euismod, non feugiat justo fringilla.
-        Pellentesque habitant morbi... Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Sed vulputate nulla ut ligula congue, a malesuada justo
-        posuere. Nulla facilisi. Donec rutrum felis vitae dolor euismod, non
-        feugiat justo fringilla. Pellentesque habitant morbi...
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate
-        nulla ut ligula congue, a malesuada justo posuere. Nulla facilisi. Donec
-        rutrum felis vitae dolor euismod, non feugiat justo fringilla.
-        Pellentesque habitant morbi... Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Sed vulputate nulla ut ligula congue, a malesuada justo
-        posuere. Nulla facilisi. Donec rutrum felis vitae dolor euismod, non
-        feugiat justo fringilla. Pellentesque habitant morbi...
-      </p>
+    <div
+      id="tasklist"
+      className="overflow-x-auto flex items-center justify-start gap-5 flex-nowrap w-full py-1 mt-16"
+    >
+      {data.tasks.map((elem, idx) => {
+        if (elem.active) {
+          return <AcceptTask key={idx} data={elem} />;
+        }
+        if (elem.newTask) {
+          return <NewTask key={idx} data={elem} />;
+        }
+        if (elem.completed) {
+          return <CompleteTask key={idx} data={elem} />;
+        }
+        if (elem.failed) {
+          return <FailedTask key={idx} data={elem} />;
+        }
+      })}
     </div>
   );
 };
 
-export default TaskList;
+export default TaskList

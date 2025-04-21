@@ -1,6 +1,7 @@
 const employees = [
   {
     id: 1,
+    name: "Employee 1",
     email: "employee1@example.com",
     password: "123",
     tasks: [
@@ -35,9 +36,16 @@ const employees = [
         failed: false,
       },
     ],
+    tasksCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
   },
   {
     id: 2,
+    name: "Employee 2",
     email: "employee2@example.com",
     password: "123",
     tasks: [
@@ -82,9 +90,16 @@ const employees = [
         failed: false,
       },
     ],
+    tasksCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 1,
+    },
   },
   {
     id: 3,
+    name: "Employee 3",
     email: "employee3@example.com",
     password: "123",
     tasks: [
@@ -139,9 +154,16 @@ const employees = [
         failed: false,
       },
     ],
+    tasksCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 2,
+      failed: 1,
+    },
   },
   {
     id: 4,
+    name: "Employee 4",
     email: "employee4@example.com",
     password: "123",
     tasks: [
@@ -176,9 +198,16 @@ const employees = [
         failed: false,
       },
     ],
+    tasksCounts: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
   },
   {
     id: 5,
+    name: "Employee 5",
     email: "employee5@example.com",
     password: "123",
     tasks: [
@@ -233,6 +262,12 @@ const employees = [
         failed: false,
       },
     ],
+    tasksCounts: {
+      active: 2,
+      newTask: 1,
+      completed: 2,
+      failed: 1,
+    },
   },
 ];
 
@@ -241,6 +276,7 @@ const admin = [
     id: 1,
     email: "admin@example.com",
     password: "123",
+    name:"PASHA"
   },
 ];
 
